@@ -10,3 +10,5 @@ gulp dev
 ```javascript
 gulp prod
 ```
+
+***Note:*** src: project files, dist: output.
