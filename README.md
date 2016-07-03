@@ -22,6 +22,7 @@ npm install
 ```javascript
 gulp dev
 ```
+livereload included for continuous integration
 
 ### Usage: production
 ```javascript
