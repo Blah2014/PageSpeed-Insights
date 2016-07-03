@@ -1,0 +1,21 @@
+{
+  "name": "boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat-css": "^2.3.0",
+    "gulp-header": "^1.8.7",
+    "gulp-htmlmin": "^2.0.0",
+    "gulp-replace": "^0.5.4",
+    "gulp-server-livereload": "^1.8.1",
+    "gulp-uglifycss": "^1.0.6",
+    "gulp-uglifyjs": "^0.6.2",
+    "gulp-watch": "^4.3.8"
+  },
+  "author": "SETLEVEL, LLC",
+  "license": "MIT"
+}
