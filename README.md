@@ -13,7 +13,7 @@ Boilerplate to achieve 100% Google Page Speed Insights
   <img src="http://traderhub.info/images/AD.jpg" border="0" name="submit" alt="TraderHub - daily stock picks, market signals, stock picking service" />
 </a>
 
-### Features
+### Features:
 #### Dev
   * Livereload for continuous integration
   
