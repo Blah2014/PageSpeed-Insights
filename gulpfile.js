@@ -155,7 +155,7 @@ gulp.task('build-prod-css', ['prod-css'], function() {
         minify: true,
         ignore: ['@font-face',/url\(/]
     }).then(function (output) {
-        // Recompress htnl
+        // Recompress html
         return gulp.src('dist/*.html')
             .pipe(htmlmin({
                 collapseWhitespace: true,
