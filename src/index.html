@@ -7,41 +7,46 @@
   
         <meta http-equiv="Cache-control" content="public, max-age=604800">
         <meta http-equiv="Expires" content="604800" />
+
     </head>
     <body>
-    
-    <div id="init-loader" style="position:absolute;z-index:0;top:0;color:transparent;display:block;width:1px;height:1px;overflow:hidden;">
-        Copyright(c) 2016 SETLEVEL, LLC. All rights reserved.
-    </div>
-    
+        
+    <section class="page-header">
+        <h1 class="project-name">Pagespeed-insights</h1>
+        <h2 class="project-tagline">Boilerplate to achieve 100% Google Page Speed Insights</h2>
+        <a href="https://github.com/Blah2014/PageSpeed-Insights" class="btn">View on GitHub</a>
+        <a href="https://github.com/Blah2014/PageSpeed-Insights/zipball/master" class="btn">Download .zip</a>
+        <a href="https://github.com/Blah2014/PageSpeed-Insights/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
     <div id="content">
-        <div style="text-align:center;font-family:arial;color:#696969;font-size:11px;padding-top:20px">
-            Loading, please wait...
+        <div class="hello">Hello World<br />...<i class="fa fa-blind" aria-hidden="true"></i></div>
+        
+        <div style="text-align: center;">
+            PageSpeed Insights Result: <a href="https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fblah2014.github.io%2FPageSpeed-Insights%2F&tab=mobile">click here</a>
+            <br >
+            Leverage browser caching: need to setup on sevrer.
         </div>
     </div>
     
+    <section class="main-content">
+        <footer class="">
+            <span class="site-footer-owner"><a href="https://github.com/Blah2014/PageSpeed-Insights">Pagespeed-insights</a> is maintained by <a href="https://github.com/Blah2014">Blah2014</a>.</span>
+        </footer>
+    </section>
+
     <script>
-        function loadResource(url, type, async, callback)
+        function loadResource(url, async, callback)
         {
             var body = document.getElementsByTagName('body')[0],
                 tag = null;
             
             // Javascript
-            if(type === 'js') {
-                tag = document.createElement('script');
-                tag.type = 'text/javascript';
-                tag.src = url;
-                tag.async = async || false;
-            }
-            
-            // CSS
-            if(type === 'css') {
-                tag = document.createElement('link');
-                tag.rel = 'stylesheet';
-                tag.type = 'text/css';
-                tag.href = url;
-            }
-            
+            tag = document.createElement('script');
+            tag.type = 'text/javascript';
+            tag.src = url;
+            tag.async = async || false;
+   
             // Callback event
             if(callback) {
                 tag.onreadystatechange = callback;
@@ -53,14 +58,13 @@
         }
         
         // Load resources
-        loadResource('https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js', 'js', true, function() {
-            $("#content").html('<div class="hello">Hello World<br />...<i class="fa fa-blind" aria-hidden="true"></i><div>');
-        });
-        loadResource('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css', 'css', true, null);
-        loadResource('css/main.min.css', 'css', true, null);
-        loadResource('js/app.min.js', 'js', true, null);
-        
+        loadResource('https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js', true, null);
+        loadResource('js/app.min.js', true, null); 
     </script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.min.css">
     
     <!-- BOF: Remove for prod -->
     <script type="text/javascript" async="" defer="" src="//localhost:35729/livereload.js?"></script>

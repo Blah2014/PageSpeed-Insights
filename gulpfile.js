@@ -8,6 +8,7 @@ var concatCss = require('gulp-concat-css');
 var uglifycss = require('gulp-uglifycss');
 var header = require('gulp-header');
 var replace = require('gulp-replace');
+var critical = require('critical');
 
 var pkg = require('./package.json');
     // var banner = ['/**',
@@ -39,7 +40,7 @@ gulp.task('dev-html', function() {
 gulp.task('dev-js', function() {
     return gulp.src(['src/**/*.js'])
             .pipe(uglifyjs('app.min.js', {
-                outSourceMap: true,
+                outSourceMap: false,
                 toplevel: false,
                 mangle: false,
                 compress: false,
@@ -117,8 +118,53 @@ gulp.task('prod-css', function() {
             .pipe(gulp.dest('dist/css'));
 });
 
+// Generate & Inline Critical-path CSS
+gulp.task('critical', function () {
+    critical.generate({
+        inline: true,
+        base: 'dist/',
+        src: 'index.html',
+        dest: 'dist/index-critical.html',
+        width: 320,
+        height: 480,
+        minify: true,
+        ignore: ['@font-face',/url\(/]
+    });
+});
+
 gulp.task('prod', ['clean'], function() {
-  gulp.start('prod-html', 'prod-js', 'prod-css');
+  gulp.start('build-prod-html');
+});
+
+gulp.task('build-prod-html', ['prod-html'], function() {
+  gulp.start('build-prod-js');
+});
+
+gulp.task('build-prod-js', ['prod-js'], function() {
+  gulp.start('build-prod-css');
+});
+
+gulp.task('build-prod-css', ['prod-css'], function() {
+  critical.generate({
+        inline: true,
+        base: 'dist/',
+        src: 'index.html',
+        dest: 'dist/index.html',
+        width: 320,
+        height: 480,
+        minify: true,
+        ignore: ['@font-face',/url\(/]
+    }).then(function (output) {
+        // Recompress htnl
+        return gulp.src('dist/*.html')
+            .pipe(htmlmin({
+                collapseWhitespace: true,
+                minifyCSS: true,
+                minifyJS: true,
+                removeComments: true
+            }))
+            .pipe(gulp.dest('dist'));
+    });
 });
 
 /* //-> Production */

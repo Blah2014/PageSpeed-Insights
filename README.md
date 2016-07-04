@@ -29,6 +29,8 @@ livereload included for continuous integration
 gulp prod
 ```
 
+PageSpeed Insights Test Page: <a target="_blank" href="https://blah2014.github.io/PageSpeed-Insights/">click here</a>
+
 ***Note:*** src: project files, dist: output.
 
 License: ***MIT License***
