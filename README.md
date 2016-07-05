@@ -24,9 +24,9 @@ Boilerplate to achieve 100% Google Page Speed Insights
   * Minify JavaScript
   * Minify HTML
   * SASS
+  * Optimize images
   
 #### ToDo
-  * Optimize images
   * Open Graphics  
 
 ### Install
