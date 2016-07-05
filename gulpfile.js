@@ -152,6 +152,10 @@ gulp.task('build-prod-html', ['prod-html'], function() {
 });
 
 gulp.task('build-prod-js', ['prod-js'], function() {
+  gulp.start('build-prod-sass');
+});
+
+gulp.task('build-prod-sass', ['sass'], function() {
   gulp.start('build-prod-css');
 });
 

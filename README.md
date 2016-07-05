@@ -16,12 +16,14 @@ Boilerplate to achieve 100% Google Page Speed Insights
 ### Features:
 #### Dev
   * Livereload for continuous integration
+  * SASS
   
 #### Prod
   * Eliminate render-blocking JavaScript and CSS in above-the-fold content
   * Minify CSS
   * Minify JavaScript
   * Minify HTML
+  * SASS
   
 #### ToDo
   * Optimize images
