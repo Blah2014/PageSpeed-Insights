@@ -1,0 +1,13 @@
+@import 'variables';
+
+body {
+  background: $body-color;
+}
+
+.hello {
+    font-family: $font-family;
+    color: $color; 
+    text-align: center;
+    font-size: 3em;
+    text-shadow: $text-shadow;
+}

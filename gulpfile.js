@@ -9,6 +9,7 @@ var uglifycss = require('gulp-uglifycss');
 var header = require('gulp-header');
 var replace = require('gulp-replace');
 var critical = require('critical');
+var sass = require('gulp-sass');
 
 var pkg = require('./package.json');
     // var banner = ['/**',
@@ -25,6 +26,16 @@ var banner = '/* v1.0.0 | (c)' + new Date().getFullYear() + ' SETLEVEL, LLC. All
 gulp.task('clean', function() {
     return gulp.src('dist/*')
             .pipe(clean());
+});
+
+gulp.task('sass', function () {
+  return gulp.src('src/sass/**/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('src/css'));
+});
+
+gulp.task('sass:watch', function () {
+  gulp.watch('src/sass/**/*.scss', ['sass']);
 });
 
 /* Development 
@@ -61,7 +72,7 @@ gulp.task('minify-css', function() {
 
 // Watch
 gulp.task('watch', function () {
-	gulp.watch('src/**/*', ['dev-html', 'dev-js', 'minify-css']);
+	gulp.watch('src/**/*', ['dev-html', 'dev-js', 'minify-css', 'sass']);
 });
 
 gulp.task('serve', function() {
