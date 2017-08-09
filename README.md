@@ -13,9 +13,13 @@ Boilerplate to achieve 100% Google Page Speed Insights
 #### If npm doesn't install all dependencies    
 **Run**
 ```
+$ npm cache clean
 $ npm update
 $ npm install gulp-sass --save-dev
 ```
+#### Dependencies
+  * [Gulp](https://gulpjs.com/)
+  
 #### Dev
   * Livereload for continuous integration
   * SASS
