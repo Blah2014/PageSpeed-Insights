@@ -9,8 +9,7 @@ Boilerplate to achieve 100% Google Page Speed Insights
   <img src="https://raw.githubusercontent.com/Blah2014/phonegap-inmobi-plugin/gh-pages/images/BuymeaCoffee.png" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" />
 </a>
 
-### Features:
-#### If npm doesn't install all dependencies    
+#### NOTE: If npm doesn't install all dependencies    
 **Run**
 ```
 $ npm cache clean
@@ -19,6 +18,8 @@ $ npm install gulp-sass --save-dev
 ```
 #### Dependencies
   * [Gulp](https://gulpjs.com/)
+
+### Features:
   
 #### Dev
   * Livereload for continuous integration
