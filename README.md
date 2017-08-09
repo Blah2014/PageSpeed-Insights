@@ -10,7 +10,7 @@ Boilerplate to achieve 100% Google Page Speed Insights
 </a>
 
 #### NOTE: If npm doesn't install all dependencies    
-**Run**
+**Try**
 ```
 $ npm cache clean
 $ npm update
